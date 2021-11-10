@@ -72,12 +72,22 @@
                       span.style.border = "1px solid #ddd";
                      
                       span.addEventListener("mouseover", function(){
-                          this.style.backgroundColor= "red";
+                          span.style.backgroundColor= "red";
                           this.style.color = "white";
                       })
                       span.addEventListener("mouseout", function(){
                           this.style.backgroundColor= "white";
                           this.style.color = "black";
+                      })
+                      span.addEventListener("click",function(){
+                          let curIndex = funList.indexOf(this);
+                          //index shows particular array
+                          let tempRemove=funList.splice(curIndex,1);
+                        //   splice do select the array 1 do remove the single arrray
+                        myFunctionList.removeChild(this);
+                          
+                           
+
                       })
                       myFunctionList.appendChild(span);
                       funList.push(span);
